@@ -1,7 +1,12 @@
 # Projeto de Automação de Testes com Robot Framework
 
 ## 📖 Descrição
-Este projeto contém uma suíte de testes automatizados desenvolvida para fins de estudo e portfólio. Os testes simulam interações de usuário [descreva aqui o que o projeto testa, por exemplo: "no site de e-commerce 'Minha Loja Exemplo', cobrindo cenários de login, busca de produtos e adição ao carrinho."].
+Este projeto contém uma suíte de testes automatizados desenvolvida para fins de estudo e portfólio. Os testes simulam interações de usuário no site de demonstração de e-commerce **Sauce Demo (saucedemo.com)**, cobrindo cenários essenciais como:
+
+* Login de usuário válido e inválido.
+* Navegação pelo inventário de produtos.
+* Adição de um item ao carrinho de compras.
+* Verificação do item no carrinho.
 
 ## 🛠️ Tecnologias Utilizadas
 * **Framework de Automação:** Robot Framework
