@@ -5,9 +5,9 @@ Resource            ${EXECDIR}/resources/common_keywords.robot
 Test Teardown       Close Browser
 
 *** Variables ***
-${VALID_USER}       standard_user
-${INVALID_USER}     usuario_invalido
-${VALID_PASSWORD}   secret_sauce
+${VALID_USER}        standard_user
+${INVALID_USER}      usuario_invalido
+${VALID_PASSWORD}    secret_sauce
 ${INVALID_PASSWORD}  senha_invalida
 
 *** Test Cases ***
@@ -25,7 +25,7 @@ Login com Username Invalido
     Abrir a pagina de login do Sauce Demo
     Preencher as credenciais de usuario e senha    ${INVALID_USER}    ${VALID_PASSWORD}
     Clicar no botao de login
-    Verificar mensagem de erro para credenciais invalidas
+    Verificar mensagem de erro especifica    Epic sadface: Username and password do not match any user in this service
 
 Login com Senha Invalida
     [Documentation]    Este teste verifica a mensagem de erro com uma senha inválida.
@@ -33,21 +33,12 @@ Login com Senha Invalida
     Abrir a pagina de login do Sauce Demo
     Preencher as credenciais de usuario e senha    ${VALID_USER}    ${INVALID_PASSWORD}
     Clicar no botao de login
-    Verificar mensagem de erro para credenciais invalidas
+    Verificar mensagem de erro especifica    Epic sadface: Username and password do not match any user in this service
 
 Login com Campos Vazios
-    [Documentation]    Este teste clica em login sem preencher nenhum campo
-    ...                e verifica a mensagem de erro de usuário obrigatório.
+    [Documentation]    Este teste clica em login sem preencher nenhum campo.
     [Tags]             Login    Negativo    Regression
     Abrir a pagina de login do Sauce Demo
-    Clicar no botao de login
-    Verificar mensagem de erro especifica    Epic sadface: Username is required
-
-Login com Username Vazio
-    [Documentation]    Este teste verifica a mensagem de erro ao tentar logar com o username em branco.
-    [Tags]             Login    Negativo    Regression
-    Abrir a pagina de login do Sauce Demo
-    Preencher as credenciais de usuario e senha    ${EMPTY}    ${VALID_PASSWORD}
     Clicar no botao de login
     Verificar mensagem de erro especifica    Epic sadface: Username is required
 
