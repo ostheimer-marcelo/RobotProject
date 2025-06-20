@@ -44,6 +44,7 @@ A suíte de testes cobre as principais jornadas de usuário da aplicação, incl
     * **Page Object Model (POM):** A estrutura foi organizada separando os casos de teste (`tests/`) dos seletores e keywords de ação (`resources/`), seguindo os princípios do POM para desacoplamento e reutilização.
     * **Testes Independentes:** Utilização de `Setup` e `Teardown` para garantir que cada teste rode em um estado limpo e conhecido, evitando o "vazamento de estado" entre eles.
     * **Keywords Reutilizáveis:** Criação de keywords de alto e baixo nível para seguir o princípio D.R.Y. (Don't Repeat Yourself).
+* **CI/CD (Integração Contínua):** GitHub Actions
 * **Ferramentas:**
     * **Git & GitHub:** Para controle de versão.
     * **Python Virtual Environments (`venv`):** Para isolamento de dependências.
