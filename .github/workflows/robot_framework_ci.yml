@@ -39,7 +39,7 @@ jobs:
 
       # Passo 4: Executar a suíte de testes completa do Robot Framework
       - name: 4. Executar os testes Robot
-        run: python -m robot --variable BROWSER:headlesschrome -d results tests/
+        run: python -m robot --variable BROWSER:Chrome -d results tests/
 
       # Passo 5: Usa a versão v4 do upload-artifact para salvar os relatórios
       - name: 5. Fazer upload dos relatórios
