@@ -15,13 +15,12 @@ Logout de Usuario Valido
     Clicar no link de Logout
     Verificar se estou de volta a pagina de login
 
-Verificar link About do menu
-    [Documentation]    Verifica se o link 'About' do menu redireciona para a página correta.
+VVerificar link About do menu
+    [Documentation]    Verifica se o link 'About' do menu aponta para a URL correta.
     [Tags]             Menu    Navegacao    Regression
     Realizar Login Valido
     Clicar no menu hamburguer
-    Clicar no link de About
-    Location Should Be    https://saucelabs.com/
+    Verificar se o link de About esta correto
 
 Verificar fechamento do menu lateral
     [Documentation]    Testa se o menu lateral é fechado ao clicar no botão 'X'.

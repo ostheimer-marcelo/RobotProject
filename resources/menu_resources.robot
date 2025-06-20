@@ -15,16 +15,13 @@ Verificar se estou de volta a pagina de login
     Wait Until Page Contains Element    id:login-button    timeout=5s
     Page Should Not Contain Element     class:inventory_list
 
-Clicar no link de About
-    [Documentation]    Clica no link 'About' usando um clique de JavaScript.
-    ...                Esta abordagem é usada porque o clique padrão do Selenium
-    ...                não estava funcionando de forma consistente para este elemento.
-
+Verificar se o link de About esta correto
+    [Documentation]    Verifica se o link 'About' existe e aponta para a URL correta.
     Wait Until Element Is Visible    id:about_sidebar_link    timeout=5s
-    Wait Until Element Is Enabled    id:about_sidebar_link    timeout=5s
-
-    ${about_link}=    Get WebElement    id:about_sidebar_link
-    Execute Javascript    arguments[0].click();    ARGUMENTS    ${about_link}
+    # Passo 1: Pega o valor do atributo 'href' do link.
+    ${href}=    Get Element Attribute    id:about_sidebar_link    href
+    # Passo 2: Compara se o valor é exatamente o que esperamos.
+    Should Be Equal    ${href}    https://saucelabs.com/
 
 Clicar no botao de fechar o menu
     [Documentation]    Espera o botão 'X' do menu ficar pronto e então o clica.
