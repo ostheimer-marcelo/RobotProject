@@ -25,3 +25,10 @@ Verificar link About do menu
     Clicar no link de About
     # Não trocamos de aba, pois a navegação ocorre na janela atual.
     Location Should Be    https://saucelabs.com/
+
+Verificar fechamento do menu lateral
+    [Documentation]    Testa se o menu lateral é fechado ao clicar no botão 'X'.
+    [Tags]             Menu    UI    Regression
+    Clicar no menu hamburguer
+    Clicar no botao de fechar o menu
+    Verificar se o menu foi fechado

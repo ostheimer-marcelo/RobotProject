@@ -25,3 +25,18 @@ Clicar no link de About
 
     ${about_link}=    Get WebElement    id:about_sidebar_link
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${about_link}
+
+Clicar no botao de fechar o menu
+    [Documentation]    Espera o botão 'X' do menu ficar pronto e então o clica.
+
+    # Adicionamos esperas para garantir que a animação do menu terminou.
+    Wait Until Element Is Visible    id=react-burger-cross-btn    timeout=5s
+    Wait Until Element Is Enabled    id=react-burger-cross-btn    timeout=5s
+
+    # Só depois que o botão está visível e habilitado, nós clicamos.
+    Click Button                     id=react-burger-cross-btn
+
+Verificar se o menu foi fechado
+    [Documentation]    Espera dinamicamente até que o link de logout
+    ...                desapareça, confirmando que o menu foi fechado.
+    Wait Until Element Is Not Visible    id=logout_sidebar_link    timeout=10s
