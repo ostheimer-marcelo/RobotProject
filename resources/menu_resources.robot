@@ -45,3 +45,9 @@ Clicar no link de Reset App State
     [Documentation]    Clica no link 'Reset App State' no menu lateral.
     Wait Until Element Is Visible    id:reset_sidebar_link    timeout=5s
     Click Element                    id:reset_sidebar_link
+
+Resetar o estado da aplicacao pelo menu
+    [Documentation]    Abre o menu, clica em reset e fecha o menu.
+    Clicar no menu hamburguer
+    Clicar no link de Reset App State
+    Clicar no botao de fechar o menu

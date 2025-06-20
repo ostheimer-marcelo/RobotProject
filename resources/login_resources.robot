@@ -27,10 +27,15 @@ Verificar mensagem de erro especifica
     Should Contain    ${texto_real_da_pagina}    ${mensagem_esperada}
 
 Realizar Login Valido
-    [Documentation]    Executa o fluxo completo de login com um usuário padrão.
-    ...                Usado como uma precondição (Setup) para suítes de teste
-    ...                que requerem um usuário autenticado.
+    [Documentation]    Executa o login e força a navegação para contornar pop-ups do navegador.
     Abrir a pagina de login do Sauce Demo
     Preencher as credenciais de usuario e senha    standard_user    secret_sauce
     Clicar no botao de login
+
+    # --- WORKAROUND PARA O POP-UP DO CHROME ---
+    # Como o pop-up está bloqueando a navegação automática, nós forçamos
+    # o navegador a ir para a página de inventário manualmente após o clique.
+    Go To    https://www.saucedemo.com/inventory.html
+
+    # A verificação final garante que estamos no lugar certo.
     Verificar se o login foi bem-sucedido

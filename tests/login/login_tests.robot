@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Testes de Login para o site Sauce Demo.
-Resource            ${EXECDIR}/resources/login_resources.robot
 Resource            ${EXECDIR}/resources/common_keywords.robot
+Resource            ${EXECDIR}/resources/login_resources.robot
 Test Teardown       Close Browser
 
 *** Variables ***
