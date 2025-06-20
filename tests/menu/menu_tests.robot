@@ -4,6 +4,7 @@ Documentation       Testes para as funcionalidades do menu lateral.
 Resource            ${EXECDIR}/resources/common_keywords.robot
 Resource            ${EXECDIR}/resources/login_resources.robot
 Resource            ${EXECDIR}/resources/menu_resources.robot
+Resource            ${EXECDIR}/resources/inventory_resources.robot
 
 # Para este teste, vamos logar antes (Setup) e fechar o navegador depois (Teardown)
 Suite Setup         Realizar Login Valido
@@ -32,3 +33,20 @@ Verificar fechamento do menu lateral
     Clicar no menu hamburguer
     Clicar no botao de fechar o menu
     Verificar se o menu foi fechado
+
+Resetar estado da aplicacao
+    [Documentation]    Verifica se o botão 'Reset App State' limpa o carrinho de compras.
+    [Tags]             Menu    Funcional    Regression
+
+    # ETAPA 1 - PREPARAÇÃO: Mudar o estado da aplicação adicionando um item.
+    # Note como usamos uma keyword de inventário em um teste de menu!
+    Adicionar produto "Sauce Labs Backpack" ao carrinho
+    Verificar se o icone do carrinho de compras foi atualizado
+
+    # ETAPA 2 - AÇÃO: Executar a funcionalidade do menu que queremos testar.
+    Clicar no menu hamburguer
+    Clicar no link de Reset App State
+    Clicar no botao de fechar o menu
+
+    # ETAPA 3 - VERIFICAÇÃO: Checar se o estado foi revertido ao original.
+    Verificar se o icone do carrinho de compras esta vazio

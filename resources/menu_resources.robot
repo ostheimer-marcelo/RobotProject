@@ -40,3 +40,8 @@ Verificar se o menu foi fechado
     [Documentation]    Espera dinamicamente até que o link de logout
     ...                desapareça, confirmando que o menu foi fechado.
     Wait Until Element Is Not Visible    id=logout_sidebar_link    timeout=10s
+
+Clicar no link de Reset App State
+    [Documentation]    Clica no link 'Reset App State' no menu lateral.
+    Wait Until Element Is Visible    id:reset_sidebar_link    timeout=5s
+    Click Element                    id:reset_sidebar_link
